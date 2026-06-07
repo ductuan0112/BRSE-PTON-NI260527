@@ -1,0 +1,28 @@
+div{
+    width: 300px;
+    background-color: antiquewhite;
+    text-align: center;
+    padding: 50px;
+    margin: 20px auto;
+}
+
+h1{
+    color: blue;
+}
+p{
+    font-size: large;
+}
+a:link{
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 6px;
+    text-decoration: none;
+    background-color: aliceblue;
+    color: black;
+    font-size: small;
+}
+a:hover{
+    background-color: green;
+    color: white;
+    border: 2px solid gray;
+}
