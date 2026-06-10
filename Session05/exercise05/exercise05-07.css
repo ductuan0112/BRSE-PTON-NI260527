@@ -1,0 +1,17 @@
+div {
+    background-color: rgb(31, 23, 23);
+    color: white;
+    width: 300px;
+    height: 200px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 200px;
+    border: 20px solid transparent;
+
+    transition: border-color 0.4s ease-in-out;
+}
+
+div:hover {
+    border-color: blue;
+}

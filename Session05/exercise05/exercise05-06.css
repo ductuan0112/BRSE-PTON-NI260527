@@ -1,0 +1,16 @@
+div {
+    background-color: rgb(31, 23, 23);
+    color: white;
+    width: 300px;
+    height: 300px;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 300px;
+
+    transition: border-radius 0.2s ease-in-out;
+}
+
+div:hover {
+    border-radius: 50%;
+}
