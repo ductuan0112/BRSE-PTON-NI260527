@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+header{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+
+    background-color: skyblue;
+    color: white;
+}
+
+main{
+    flex: 1;
+    display: flex;
+    gap: 10px;
+}
+
+.sidebar{
+    width: 25%;
+    background: green;
+
+    color: white;
+    padding: 10px;
+}
+
+.content{
+    flex: 1;
+    background: red;
+
+    color: white;
+    padding: 10px;
+}
+
+footer{
+    height: 60px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    background-color: purple;
+    color: white;
+}
