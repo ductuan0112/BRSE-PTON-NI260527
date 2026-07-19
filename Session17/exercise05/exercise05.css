@@ -1,0 +1,91 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(https://i.pinimg.com/736x/0c/c6/f5/0cc6f5bb69151b4f9547185c7d9b5f43.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 100vh;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.form {
+  width: 350px;
+  margin: 50px auto;
+  border: 1px solid skyblue;
+  background: white;
+}
+
+.login {
+  padding: 0 10px;
+}
+
+.log-in {
+  text-align: center;
+  padding: 10px;
+  background-color: skyblue;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.login-method {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.login-method img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+}
+
+.btn-submit {
+  width: 100%;
+  height: 40px;
+  color: white;
+  border: none;
+  background-color: rgb(244, 24, 24);
+}
+
+.text-or {
+  text-align: center;
+  padding: 15px;
+  color: skyblue;
+}
+
+.account-check {
+  text-decoration: none;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+  color: skyblue;
+}
+
+footer {
+  color: rgb(246, 233, 233);
+  text-align: center;
+  margin-top: 30px;
+  font-size: 14px;
+}
