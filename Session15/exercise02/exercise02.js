@@ -1,43 +1,43 @@
-// // BAI 1:
+// BAI 1:
 
-// let arr = ['c', 's', 'c', '2', '6', '1'];
+let arr = ['c', 's', 'c', '2', '6', '1'];
 
-// let result = arr.reverse().join('');
+let result = arr.reverse().join('');
 
-// console.log(result);
+console.log(result);
 
-// // BAI 2:
+// BAI 2:
 
-// let arr = ['a', '1', 'b', '5', 'c', '9', '@'];
-// let count = 0;
+let arr = ['a', '1', 'b', '5', 'c', '9', '@'];
+let count = 0;
 
-// for (let value of arr) {
-//   if (!Number.isNaN(Number(value))) {
-//     count++
-//   }
-// };
+for (let value of arr) {
+  if (!Number.isNaN(Number(value))) {
+    count++
+  }
+};
 
-// console.log(`Có ${count} ký tự số`)
+console.log(`Có ${count} ký tự số`)
 
-// // BAI 3:
+// BAI 3:
 
-// let str = prompt('Nhập vào một chuỗi ký tự');
-// let arr = str.split('');
+let str = prompt('Nhập vào một chuỗi ký tự');
+let arr = str.split('');
 
-// console.log('Số ký tự trong chuỗi là:', arr.length)
+console.log('Số ký tự trong chuỗi là:', arr.length)
 
-// // BAI 4:
+// BAI 4:
 
-// let str1 = prompt('Nhập vào chuỗi thứ nhất');
-// let str2 = prompt('Nhập vào chuỗi thứ hai');
+let str1 = prompt('Nhập vào chuỗi thứ nhất');
+let str2 = prompt('Nhập vào chuỗi thứ hai');
 
-// if (str1 === str2) {
-//   console.log('2 chuỗi vừa nhập giống nhau!');
-// } else {
-//   console.log('2 chuỗi vừa nhập không giống nhau!')
-// }
+if (str1 === str2) {
+  console.log('2 chuỗi vừa nhập giống nhau!');
+} else {
+  console.log('2 chuỗi vừa nhập không giống nhau!')
+}
 
-// BAI 5:
+BAI 5:
 
 let arr = [];
 let n = +prompt('Nhập vào số lượng ký tự');
