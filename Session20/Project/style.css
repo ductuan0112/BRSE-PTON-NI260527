@@ -1,0 +1,605 @@
+/* ================= CÀI ĐẶT CHUNG ================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #ffffff;
+  color: #111111;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+
+/* ================= HEADER ================= */
+
+.main-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.header-content {
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.logo {
+  min-width: 110px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.logo i {
+  font-size: 18px;
+}
+
+.search-box {
+  width: 100%;
+  max-width: 380px;
+  height: 42px;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+}
+
+.search-box i {
+  color: #888888;
+}
+
+.search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+
+.header-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.header-actions>a:not(.action-icon) {
+  color: #777777;
+}
+
+.header-actions>a:hover {
+  color: #000000;
+}
+
+.action-icon {
+  font-size: 20px;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.category-navbar {
+  background-color: #202020;
+}
+
+.navbar-list {
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.navbar-list a {
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #bbbbbb;
+  font-size: 14px;
+}
+
+.navbar-list a:hover {
+  color: #ffffff;
+}
+
+
+/* ================= BANNER SLIDE ================= */
+
+.banner {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
+  background-position: center;
+  background-size: cover;
+}
+
+.banner-one {
+  background-image:
+    linear-gradient(90deg,
+      rgba(28, 23, 31, 0.98) 0%,
+      rgba(28, 23, 31, 0.75) 45%,
+      rgba(28, 23, 31, 0.05) 100%),
+    url("https://images.unsplash.com/photo-1678652197831-2d180705cd2c?auto=format&fit=crop&w=1600&q=85");
+}
+
+.banner-two {
+  background-image:
+    linear-gradient(90deg,
+      rgba(8, 18, 30, 0.98) 0%,
+      rgba(8, 18, 30, 0.65) 48%,
+      rgba(8, 18, 30, 0.05) 100%),
+    url("https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1600&q=85");
+}
+
+.banner-three {
+  background-image:
+    linear-gradient(90deg,
+      rgba(25, 25, 25, 0.98) 0%,
+      rgba(25, 25, 25, 0.7) 45%,
+      rgba(25, 25, 25, 0.1) 100%),
+    url("https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=1600&q=85");
+}
+
+.banner-content {
+  max-width: 570px;
+  color: #ffffff;
+}
+
+.banner-small-title {
+  margin-bottom: 10px;
+  color: #a5a5a5;
+  font-size: 20px;
+}
+
+.banner-content h1 {
+  margin-bottom: 15px;
+  font-size: 64px;
+  font-weight: 300;
+}
+
+.banner-content h1 strong {
+  font-weight: 700;
+}
+
+.banner-description {
+  margin-bottom: 30px;
+  color: #bdbdbd;
+}
+
+.btn-banner {
+  min-width: 130px;
+  padding: 12px 25px;
+  display: inline-block;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  color: #ffffff;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.btn-banner:hover {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+
+/* ================= TIÊU ĐỀ SECTION ================= */
+
+.section-header {
+  margin-bottom: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-header h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.section-arrow {
+  width: 38px;
+  height: 38px;
+  border: none;
+  background-color: transparent;
+  font-size: 20px;
+}
+
+
+/* ================= DANH MỤC ================= */
+
+.category-section {
+  padding: 70px 0;
+  background-color: #fafafa;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+
+.category-card {
+  min-height: 145px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  background-color: #eeeeee;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.category-card i {
+  font-size: 38px;
+}
+
+.category-card span {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.category-card:hover {
+  background-color: #111111;
+  color: #ffffff;
+  transform: translateY(-5px);
+}
+
+
+/* ================= SẢN PHẨM ================= */
+
+.product-section,
+.discount-section {
+  padding: 75px 0;
+}
+
+.discount-section {
+  padding-top: 20px;
+}
+
+.product-tabs {
+  margin-bottom: 30px;
+  display: flex;
+  gap: 25px;
+}
+
+.product-tab {
+  padding: 0 0 7px;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background-color: transparent;
+  color: #999999;
+}
+
+.product-tab.active {
+  border-color: #111111;
+  color: #111111;
+}
+
+.product-card {
+  height: 100%;
+  min-height: 420px;
+  padding: 25px 18px 18px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+  border-radius: 10px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+.favorite-button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border: none;
+  background-color: transparent;
+  color: #aaaaaa;
+  font-size: 20px;
+}
+
+.favorite-button.active {
+  color: #ff0000;
+}
+
+.product-image {
+  width: 100%;
+  height: 210px;
+  margin-bottom: 18px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+.product-name {
+  min-height: 45px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.old-price {
+  margin-bottom: 3px;
+  color: #999999;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+
+.buy-button {
+  width: 100%;
+  padding: 11px;
+  margin-top: auto;
+  border: 1px solid #111111;
+  border-radius: 6px;
+  background-color: #111111;
+  color: #ffffff;
+  transition: 0.3s;
+}
+
+.buy-button:hover {
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.discount-label {
+  padding: 5px 10px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  border-radius: 5px;
+  background-color: #ef4444;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+
+/* ================= BANNER KHUYẾN MÃI ================= */
+
+.promotion-banner {
+  min-height: 360px;
+  background-image:
+    url("https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1600&q=85");
+  background-position: center;
+  background-size: cover;
+}
+
+.promotion-overlay {
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.68);
+}
+
+.promotion-content {
+  color: #ffffff;
+  text-align: center;
+}
+
+.promotion-content h2 {
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: 400;
+}
+
+.promotion-content p {
+  margin-bottom: 25px;
+  color: #bbbbbb;
+}
+
+
+/* ================= FOOTER ================= */
+
+.main-footer {
+  padding: 70px 0 25px;
+  background-color: #050505;
+  color: #ffffff;
+}
+
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.footer-description {
+  max-width: 380px;
+  color: #aaaaaa;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.social-list {
+  margin-top: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-list a {
+  color: #ffffff;
+}
+
+.footer-title {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.footer-links {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 11px;
+}
+
+.footer-links a {
+  color: #aaaaaa;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.footer-bottom {
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid #222222;
+  color: #777777;
+  font-size: 13px;
+  text-align: center;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 991px) {
+  .header-content {
+    flex-wrap: wrap;
+    padding: 15px 0;
+  }
+
+  .search-box {
+    max-width: none;
+    order: 3;
+  }
+
+  .header-actions>a:not(.action-icon) {
+    display: none;
+  }
+
+  .navbar-list {
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .navbar-list li {
+    flex-shrink: 0;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .banner-content h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-actions {
+    gap: 12px;
+  }
+
+  .banner {
+    min-height: 430px;
+  }
+
+  .banner-content {
+    max-width: 85%;
+  }
+
+  .banner-content h1 {
+    font-size: 38px;
+  }
+
+  .banner-small-title {
+    font-size: 17px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .product-card {
+    min-height: 360px;
+    padding: 20px 12px 14px;
+  }
+
+  .product-image {
+    height: 160px;
+  }
+
+  .product-name {
+    font-size: 13px;
+  }
+
+  .product-price {
+    font-size: 17px;
+  }
+
+  .promotion-content h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    min-width: auto;
+    font-size: 21px;
+  }
+
+  .category-grid {
+    gap: 12px;
+  }
+
+  .category-card {
+    min-height: 120px;
+  }
+
+  .category-card i {
+    font-size: 30px;
+  }
+
+  .product-card {
+    min-height: 335px;
+  }
+
+  .product-image {
+    height: 135px;
+  }
+
+  .buy-button {
+    padding: 9px;
+    font-size: 13px;
+  }
+}

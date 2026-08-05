@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Cyber Ecommerce</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- CSS riêng -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+  <header class="main-header">
+    <div class="container">
+      <div class="header-content">
+
+        <!-- Logo -->
+        <a href="#" class="logo">
+          <i class="bi bi-caret-down-fill"></i>
+          Cyber
+        </a>
+
+        <!-- Tìm kiếm -->
+        <div class="search-box">
+          <i class="bi bi-search"></i>
+
+          <input type="text" placeholder="Tìm kiếm sản phẩm...">
+        </div>
+
+        <!-- Menu bên phải -->
+        <div class="header-actions">
+          <a href="#">Trang chủ</a>
+          <a href="#">Giới thiệu</a>
+          <a href="#">Liên hệ</a>
+
+          <a href="#" class="action-icon">
+            <i class="bi bi-heart"></i>
+          </a>
+
+          <a href="#" class="action-icon">
+            <i class="bi bi-cart3"></i>
+          </a>
+
+          <a href="#" class="action-icon">
+            <i class="bi bi-person"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= NAVBAR ================= -->
+  <nav class="category-navbar">
+    <div class="container">
+      <ul class="navbar-list">
+        <li>
+          <a href="#">
+            <i class="bi bi-phone"></i>
+            Điện thoại
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bi bi-laptop"></i>
+            Laptop
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bi bi-smartwatch"></i>
+            Đồng hồ thông minh
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bi bi-camera"></i>
+            Camera
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bi bi-headphones"></i>
+            Tai nghe
+          </a>
+        </li>
+
+        <li>
+          <a href="#">
+            <i class="bi bi-controller"></i>
+            Gaming
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================= BANNER SLIDE ================= -->
+  <section class="banner-section">
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+
+      <!-- Chấm chuyển slide -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="0" class="active"></button>
+
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="1"></button>
+
+        <button type="button" data-bs-target="#bannerCarousel" data-bs-slide-to="2"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="banner banner-one">
+            <div class="container">
+              <div class="banner-content">
+                <p class="banner-small-title">
+                  Đột phá công nghệ
+                </p>
+
+                <h1>
+                  iPhone 14 <strong>Pro</strong>
+                </h1>
+
+                <p class="banner-description">
+                  Được tạo ra để thay đổi mọi thứ.
+                  Cho tất cả mọi người.
+                </p>
+
+                <a href="#products" class="btn-banner">
+                  Mua ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="banner banner-two">
+            <div class="container">
+              <div class="banner-content">
+                <p class="banner-small-title">
+                  Thiết kế hiện đại
+                </p>
+
+                <h1>
+                  MacBook <strong>Pro</strong>
+                </h1>
+
+                <p class="banner-description">
+                  Hiệu suất mạnh mẽ cho công việc và sáng tạo.
+                </p>
+
+                <a href="#products" class="btn-banner">
+                  Xem sản phẩm
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item">
+          <div class="banner banner-three">
+            <div class="container">
+              <div class="banner-content">
+                <p class="banner-small-title">
+                  Âm thanh chất lượng
+                </p>
+
+                <h1>
+                  AirPods <strong>Max</strong>
+                </h1>
+
+                <p class="banner-description">
+                  Trải nghiệm âm thanh sống động và chân thực.
+                </p>
+
+                <a href="#products" class="btn-banner">
+                  Khám phá ngay
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Nút chuyển trái -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+
+      <!-- Nút chuyển phải -->
+      <button class="carousel-control-next" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ================= DANH MỤC ================= -->
+  <section class="category-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Danh mục sản phẩm</h2>
+
+        <div>
+          <button class="section-arrow">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+
+          <button class="section-arrow">
+            <i class="bi bi-chevron-right"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="category-grid">
+
+        <a href="#" class="category-card">
+          <i class="bi bi-phone"></i>
+          <span>Điện thoại</span>
+        </a>
+
+        <a href="#" class="category-card">
+          <i class="bi bi-smartwatch"></i>
+          <span>Đồng hồ</span>
+        </a>
+
+        <a href="#" class="category-card">
+          <i class="bi bi-camera"></i>
+          <span>Camera</span>
+        </a>
+
+        <a href="#" class="category-card">
+          <i class="bi bi-headphones"></i>
+          <span>Tai nghe</span>
+        </a>
+
+        <a href="#" class="category-card">
+          <i class="bi bi-laptop"></i>
+          <span>Máy tính</span>
+        </a>
+
+        <a href="#" class="category-card">
+          <i class="bi bi-controller"></i>
+          <span>Gaming</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= DANH SÁCH SẢN PHẨM ================= -->
+  <section class="product-section" id="products">
+    <div class="container">
+
+      <!-- Tab sản phẩm -->
+      <div class="product-tabs">
+        <button class="product-tab active">
+          Sản phẩm mới
+        </button>
+
+        <button class="product-tab">
+          Bán chạy
+        </button>
+
+        <button class="product-tab">
+          Nổi bật
+        </button>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Sản phẩm 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?auto=format&fit=crop&w=500&q=80"
+              alt="iPhone 14 Pro" class="product-image">
+
+            <h3 class="product-name">
+              Apple iPhone 14 Pro Max 128GB
+            </h3>
+
+            <div class="product-price">
+              25.990.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=500&q=80"
+              alt="Camera" class="product-image">
+
+            <h3 class="product-name">
+              Máy ảnh kỹ thuật số chuyên nghiệp
+            </h3>
+
+            <div class="product-price">
+              12.500.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=500&q=80"
+              alt="Apple Watch" class="product-image">
+
+            <h3 class="product-name">
+              Apple Watch Series 9 GPS
+            </h3>
+
+            <div class="product-price">
+              9.990.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=500&q=80"
+              alt="Tai nghe" class="product-image">
+
+            <h3 class="product-name">
+              AirPods Max Silver
+            </h3>
+
+            <div class="product-price">
+              13.490.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 5 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+              alt="Đồng hồ" class="product-image">
+
+            <h3 class="product-name">
+              Đồng hồ thông minh Galaxy Watch
+            </h3>
+
+            <div class="product-price">
+              7.390.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 6 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button active">
+              <i class="bi bi-heart-fill"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1605236453806-6ff36851218e?auto=format&fit=crop&w=500&q=80"
+              alt="Samsung Phone" class="product-image">
+
+            <h3 class="product-name">
+              Samsung Galaxy Z Fold
+            </h3>
+
+            <div class="product-price">
+              29.990.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 7 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=500&q=80"
+              alt="Tai nghe không dây" class="product-image">
+
+            <h3 class="product-name">
+              Galaxy Buds FE Graphite
+            </h3>
+
+            <div class="product-price">
+              2.490.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Sản phẩm 8 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=500&q=80"
+              alt="Máy tính bảng" class="product-image">
+
+            <h3 class="product-name">
+              Apple iPad 10.2 inch Wi-Fi
+            </h3>
+
+            <div class="product-price">
+              9.980.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SẢN PHẨM GIẢM GIÁ ================= -->
+  <section class="discount-section">
+    <div class="container">
+
+      <div class="section-header">
+        <h2>Sản phẩm giảm giá</h2>
+      </div>
+
+      <div class="row g-4">
+
+        <!-- Giảm giá 1 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <span class="discount-label">
+              -10%
+            </span>
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1603891128711-11b4b03bb138?auto=format&fit=crop&w=500&q=80"
+              alt="iPhone" class="product-image">
+
+            <h3 class="product-name">
+              Apple iPhone 14 Pro 512GB
+            </h3>
+
+            <div class="old-price">
+              31.990.000đ
+            </div>
+
+            <div class="product-price">
+              28.790.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Giảm giá 2 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <span class="discount-label">
+              -15%
+            </span>
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?auto=format&fit=crop&w=500&q=80"
+              alt="AirPods Max" class="product-image">
+
+            <h3 class="product-name">
+              AirPods Max Silver
+            </h3>
+
+            <div class="old-price">
+              13.490.000đ
+            </div>
+
+            <div class="product-price">
+              11.460.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Giảm giá 3 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <span class="discount-label">
+              -20%
+            </span>
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?auto=format&fit=crop&w=500&q=80"
+              alt="Apple Watch" class="product-image">
+
+            <h3 class="product-name">
+              Apple Watch Series 9
+            </h3>
+
+            <div class="old-price">
+              9.990.000đ
+            </div>
+
+            <div class="product-price">
+              7.990.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+        <!-- Giảm giá 4 -->
+        <div class="col-6 col-md-4 col-lg-3">
+          <div class="product-card">
+
+            <span class="discount-label">
+              -12%
+            </span>
+
+            <button class="favorite-button">
+              <i class="bi bi-heart"></i>
+            </button>
+
+            <img src="https://images.unsplash.com/photo-1601784551446-20c9e07cdbdb?auto=format&fit=crop&w=500&q=80"
+              alt="iPad" class="product-image">
+
+            <h3 class="product-name">
+              Apple iPad Pro 11 inch
+            </h3>
+
+            <div class="old-price">
+              21.990.000đ
+            </div>
+
+            <div class="product-price">
+              19.350.000đ
+            </div>
+
+            <button class="buy-button">
+              Mua ngay
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BANNER KHUYẾN MÃI ================= -->
+  <section class="promotion-banner">
+    <div class="promotion-overlay">
+      <div class="container">
+        <div class="promotion-content">
+          <h2>Ưu đãi mùa hè</h2>
+
+          <p>
+            Nhanh tay săn đón các sản phẩm chất lượng
+          </p>
+
+          <a href="#products" class="btn-banner">
+            Mua ngay
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="main-footer">
+    <div class="container">
+
+      <div class="row g-5">
+
+        <!-- Giới thiệu -->
+        <div class="col-md-5">
+          <a href="#" class="footer-logo">
+            <i class="bi bi-caret-down-fill"></i>
+            Cyber
+          </a>
+
+          <p class="footer-description">
+            Chúng tôi cung cấp các sản phẩm công nghệ,
+            giúp khách hàng thỏa sức trải nghiệm các dịch vụ,
+            tiện ích nhanh chóng và hiệu quả.
+          </p>
+
+          <div class="social-list">
+            <a href="#">
+              <i class="bi bi-twitter-x"></i>
+            </a>
+
+            <a href="#">
+              <i class="bi bi-facebook"></i>
+            </a>
+
+            <a href="#">
+              <i class="bi bi-tiktok"></i>
+            </a>
+
+            <a href="#">
+              <i class="bi bi-instagram"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Dịch vụ -->
+        <div class="col-6 col-md-3">
+          <h3 class="footer-title">
+            Dịch vụ
+          </h3>
+
+          <ul class="footer-links">
+            <li><a href="#">Chương trình khuyến mãi</a></li>
+            <li><a href="#">Gift cards</a></li>
+            <li><a href="#">Thu dùng và thanh toán</a></li>
+            <li><a href="#">Dịch vụ hợp đồng</a></li>
+            <li><a href="#">Vị trí cửa hàng</a></li>
+            <li><a href="#">Thanh toán</a></li>
+          </ul>
+        </div>
+
+        <!-- Hỗ trợ -->
+        <div class="col-6 col-md-4">
+          <h3 class="footer-title">
+            Hỗ trợ người mua
+          </h3>
+
+          <ul class="footer-links">
+            <li><a href="#">Tìm kiếm đơn đặt hàng</a></li>
+            <li><a href="#">Điều khoản giao hàng</a></li>
+            <li><a href="#">Trao đổi và trả hàng</a></li>
+            <li><a href="#">Chính sách bảo hành</a></li>
+            <li><a href="#">Câu hỏi thường gặp</a></li>
+            <li><a href="#">Chính sách và điều khoản</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        © 2026 Cyber Ecommerce. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JavaScript dùng cho slide -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
