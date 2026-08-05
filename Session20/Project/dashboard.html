@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quản lý Ecommerce</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <style>
+    :root {
+      --sidebar-width: 240px;
+      --primary-color: #2563eb;
+    }
+
+    body {
+      background-color: #f4f5f7;
+      font-family: Arial, sans-serif;
+      color: #333;
+    }
+
+    /* Sidebar */
+    .sidebar {
+      width: var(--sidebar-width);
+      min-height: 100vh;
+      background: #ffffff;
+      border-right: 1px solid #e5e7eb;
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100;
+    }
+
+    .brand-logo {
+      font-size: 1.25rem;
+      font-weight: bold;
+      padding: 1.5rem;
+      color: #111827;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-logo i {
+      color: #ef4444;
+    }
+
+    .nav-menu {
+      padding: 0 1rem;
+      list-style: none;
+    }
+
+    .nav-link-custom {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0.75rem 1rem;
+      color: #4b5563;
+      text-decoration: none;
+      font-weight: 500;
+      border-radius: 8px;
+      margin-bottom: 4px;
+      cursor: pointer;
+    }
+
+    .nav-link-custom:hover {
+      background-color: #f3f4f6;
+      color: #111827;
+    }
+
+    .nav-link-custom.active {
+      background-color: #e0edff;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    /* Layout */
+    .main-wrapper {
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+    }
+
+    .top-header {
+      height: 64px;
+      background: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 2rem;
+      gap: 20px;
+    }
+
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .content-container {
+      padding: 2rem;
+    }
+
+    .table-container {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .table th {
+      background-color: #f9fafb;
+      color: #6b7280;
+      font-size: 0.85rem;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 12px 16px;
+    }
+
+    .table td {
+      vertical-align: middle;
+      padding: 14px 16px;
+      font-size: 0.9rem;
+    }
+
+    /* Status Badges */
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    .status-active {
+      background-color: #def7ec;
+      color: #03543f;
+    }
+
+    .status-active::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background-color: #0e9f6e;
+      border-radius: 50%;
+    }
+
+    .status-inactive {
+      background-color: #fde8e8;
+      color: #9b1c1c;
+    }
+
+    .status-inactive::before {
+      content: "";
+      width: 6px;
+      height: 6px;
+      background-color: #f05252;
+      border-radius: 50%;
+    }
+
+    .btn-action-icon {
+      border: none;
+      background: transparent;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+
+    .btn-edit {
+      color: #f59e0b;
+    }
+
+    .btn-delete {
+      color: #ef4444;
+    }
+
+    .error-msg {
+      font-size: 0.8rem;
+      color: #dc3545;
+      margin-top: 4px;
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- SIDEBAR MENU -->
+  <aside class="sidebar">
+    <div class="brand-logo">
+      <i class="bi bi-fire"></i> Ecommerce
+    </div>
+    <ul class="nav-menu">
+      <li>
+        <a class="nav-link-custom" id="nav-thongke" onclick="switchTab('thongke')">
+          <i class="bi bi-house-door"></i> Thống kê
+        </a>
+      </li>
+      <li>
+        <a class="nav-link-custom active" id="nav-danhmuc" onclick="switchTab('danhmuc')">
+          <i class="bi bi-folder"></i> Danh mục
+        </a>
+      </li>
+      <li>
+        <a class="nav-link-custom" id="nav-sanpham" onclick="switchTab('sanpham')">
+          <i class="bi bi-box-seam"></i> Sản phẩm
+        </a>
+      </li>
+    </ul>
+  </aside>
+
+  <!-- MAIN WRAPPER -->
+  <div class="main-wrapper">
+    <header class="top-header">
+      <i class="bi bi-bell text-muted fs-5"></i>
+
+      <div class="d-flex align-items-center gap-2">
+        <div class="text-end">
+          <div id="headerUserName" class="fw-bold">
+            Admin
+          </div>
+
+          <small id="headerUserEmail" class="text-muted">
+            admin@gmail.com
+          </small>
+        </div>
+
+        <img id="headerUserAvatar"
+          src="https://png.pngtree.com/png-clipart/20230927/original/pngtree-man-avatar-image-for-profile-png-image_13001877.png"
+          alt="Avatar" class="user-avatar">
+
+        <button type="button" class="btn btn-outline-danger btn-sm" onclick="logout()">
+          Đăng xuất
+        </button>
+      </div>
+    </header>
+
+    <main class="content-container">
+
+      <!-- 1. TAB THỐNG KÊ -->
+      <section id="tab-thongke" class="d-none">
+        <h2 class="fw-bold mb-4">Thống kê</h2>
+        <div class="table-container p-4">
+          <p class="text-muted">Chào mừng bạn đến với hệ thống quản trị Ecommerce.</p>
+        </div>
+      </section>
+
+      <!-- 2. TAB DANH MỤC -->
+      <section id="tab-danhmuc">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="fw-bold mb-0">Danh mục</h2>
+          <button class="btn btn-primary px-3 py-2 fw-medium" onclick="openCategoryModal(-1)">
+            Thêm mới danh mục
+          </button>
+        </div>
+
+        <div class="table-container">
+          <!-- Bộ lọc & Sắp xếp -->
+          <div class="row g-3 justify-content-end mb-4">
+            <div class="col-md-3">
+              <select class="form-select" id="catSort" onchange="changeCategoryFilter()">
+                <option value="created-newest">Mới nhất</option>
+                <option value="created-oldest">Cũ nhất</option>
+                <option value="name-asc">Tên (A-Z)</option>
+                <option value="name-desc">Tên (Z-A)</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select class="form-select" id="catStatusFilter" onchange="changeCategoryFilter()">
+                <option value="all">Tất cả trạng thái</option>
+                <option value="ACTIVE">Đang hoạt động</option>
+                <option value="INACTIVE">Ngừng hoạt động</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" id="catSearchInput" placeholder="Tìm kiếm danh mục..."
+                  onkeyup="changeCategoryFilter()">
+                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bảng danh mục -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Mã danh mục</th>
+                  <th>Tên danh mục</th>
+                  <th>Trạng thái</th>
+                  <th class="text-end">Chức năng</th>
+                </tr>
+              </thead>
+              <tbody id="catTableBody"></tbody>
+            </table>
+          </div>
+
+          <!-- Phân trang -->
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span id="categoryPageInfo" class="text-muted small"></span>
+            <ul class="pagination pagination-sm mb-0" id="categoryPagination"></ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. TAB SẢN PHẨM -->
+      <section id="tab-sanpham" class="d-none">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="fw-bold mb-0">Sản phẩm</h2>
+          <button class="btn btn-primary px-3 py-2 fw-medium" onclick="openProductModal(-1)">
+            Thêm mới sản phẩm
+          </button>
+        </div>
+
+        <div class="table-container">
+          <!-- Bộ lọc -->
+          <div class="row g-3 justify-content-end mb-4">
+            <div class="col-md-3">
+              <select class="form-select" id="prodCatFilter" onchange="renderProducts()">
+                <option value="all">Lọc theo danh mục</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <select class="form-select" id="prodStatusFilter" onchange="renderProducts()">
+                <option value="all">Lọc theo trạng thái</option>
+                <option value="ACTIVE">Đang hoạt động</option>
+                <option value="INACTIVE">Ngừng hoạt động</option>
+              </select>
+            </div>
+            <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" id="prodSearchInput" placeholder="Tìm kiếm sản phẩm..."
+                  onkeyup="renderProducts()">
+                <span class="input-group-text bg-white"><i class="bi bi-search"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bảng sản phẩm -->
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Mã sản phẩm</th>
+                  <th>Tên sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Giảm giá (%)</th>
+                  <th>Trạng thái</th>
+                  <th class="text-end">Chức năng</th>
+                </tr>
+              </thead>
+              <tbody id="prodTableBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL: DANH MỤC -->
+  <div class="modal fade" id="categoryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="catModalTitle">Thêm mới danh mục</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="catForm">
+            <input type="hidden" id="catIndex">
+            <div class="mb-3">
+              <label class="form-label fw-medium">Mã danh mục <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="catId">
+              <small class="error-msg" id="catIdErr"></small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label fw-medium">Tên danh mục <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" id="catName">
+              <small class="error-msg" id="catNameErr"></small>
+            </div>
+            <div class="mb-3">
+              <label class="form-label d-block fw-medium">Trạng thái</label>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="catStatus" id="catActive" value="ACTIVE" checked>
+                <label class="form-check-label" for="catActive">Đang hoạt động</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" name="catStatus" id="catInactive" value="INACTIVE">
+                <label class="form-check-label" for="catInactive">Ngừng hoạt động</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-primary px-4" id="btnSaveCat" onclick="saveCategory()">Thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: SẢN PHẨM -->
+  <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold" id="prodModalTitle">Thêm mới sản phẩm</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          <form id="prodForm">
+            <input type="hidden" id="prodIdHidden">
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label fw-medium">Mã sản phẩm <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="prodCode">
+                <small class="error-msg" id="prodCodeErr"></small>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label fw-medium">Tên sản phẩm <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="prodName">
+                <small class="error-msg" id="prodNameErr"></small>
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label class="form-label fw-medium">Danh mục <span class="text-danger">*</span></label>
+                <select class="form-select" id="prodCatSelect"></select>
+                <small class="error-msg" id="prodCatErr"></small>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label d-block fw-medium">Trạng thái</label>
+                <div class="form-check form-check-inline mt-2">
+                  <input class="form-check-input" type="radio" name="prodStatus" id="prodActive" value="ACTIVE" checked>
+                  <label class="form-check-label" for="prodActive">Đang hoạt động</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="prodStatus" id="prodInactive" value="INACTIVE">
+                  <label class="form-check-label" for="prodInactive">Ngừng hoạt động</label>
+                </div>
+              </div>
+            </div>
+            <div class="row g-3 mb-3">
+              <div class="col-md-4">
+                <label class="form-label fw-medium">Số lượng</label>
+                <input type="number" class="form-control" id="prodStock" value="1">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-medium">Giá</label>
+                <input type="number" class="form-control" id="prodPrice" value="10000">
+              </div>
+              <div class="col-md-4">
+                <label class="form-label fw-medium">Giảm giá (%)</label>
+                <input type="number" class="form-control" id="prodDiscount" value="0">
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-secondary px-4" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-primary px-4" id="btnSaveProd" onclick="saveProduct()">Thêm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: XÁC NHẬN XÓA -->
+  <div class="modal fade" id="confirmDeleteModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center p-3">
+        <div class="modal-body">
+          <i class="bi bi-exclamation-triangle text-warning display-4 mb-3 d-block"></i>
+          <h5 class="fw-bold mb-2">Xác nhận xóa</h5>
+          <p class="text-muted small mb-0" id="confirmDeleteMsg">Bạn có chắc chắn muốn xóa không?</p>
+        </div>
+        <div class="d-flex justify-content-center gap-2 mt-3">
+          <button type="button" class="btn btn-light px-3" data-bs-dismiss="modal">Hủy</button>
+          <button type="button" class="btn btn-danger px-3" id="btnConfirmDelete">Xóa</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: THÔNG BÁO -->
+  <div class="modal fade" id="notificationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+      <div class="modal-content text-center p-3">
+        <div class="modal-body">
+          <i class="bi bi-check-circle text-success display-4 mb-3 d-block"></i>
+          <h5 class="fw-bold mb-2">Thông báo</h5>
+          <p class="text-muted small mb-0" id="notificationMsg">Thao tác thành công!</p>
+        </div>
+        <div class="mt-3">
+          <button type="button" class="btn btn-primary px-4" data-bs-dismiss="modal">Đóng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Nhúng các file JavaScript -->
+  <script src="data.js"></script>
+  <script src="dashboard.js"></script>
+</body>
+
+</html>
